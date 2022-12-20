@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box; /* อ้างอิงขนาดจริง */
+    
+}
+
+ิbody{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}

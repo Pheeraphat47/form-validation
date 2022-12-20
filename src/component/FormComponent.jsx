@@ -1,3 +1,5 @@
+import "./FormComponent.css";
+
 const FormComponent = () => {
     return(       
         <div className="container">
