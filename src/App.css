@@ -20,9 +20,9 @@
     padding: 10px 40px;
 }
 
-h2{
+h1{
     text-align: center;
-    margin: 0 0 0 20px;
+    margin: 20px 0 20px 20px;
 }
 
 .form-control{
@@ -48,7 +48,8 @@ h2{
 }
 
 .form-control input:focus{
-    outline: none;
+    outline: none !important;    
+    box-shadow: 0 0 5px blue;
 }
 
 .form button {
@@ -64,7 +65,7 @@ h2{
 }
 
 @media screen and (max-width: 768px) {
-    .container{
+    .container{        
         width: 80%;
     }    
 }
