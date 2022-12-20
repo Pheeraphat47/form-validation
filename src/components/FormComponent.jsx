@@ -1,4 +1,4 @@
-import "./FormComponent.css";
+import React from 'react';
 
 const FormComponent = () => {
     return(       
@@ -6,6 +6,7 @@ const FormComponent = () => {
             {/* สร้างฟอรม์ */}
             <form className="form">        
             {/* Content ภายในฟอรม์ */}        
+                <h2>Registration Form</h2>
                 <div className="form-control">
                      <label>Username</label>
                      <input type="text" />

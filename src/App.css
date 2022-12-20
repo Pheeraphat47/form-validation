@@ -1,2 +1,77 @@
+*{
+    box-sizing: border-box; /* อ้างอิงขนาดจริง */
+}
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.container{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 50%;
+}
+
+.form{
+    padding: 10px 40px;
+}
+
+h2{
+    text-align: center;
+    margin: 0 0 0 20px;
+}
+
+.form-control{
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+/* ให้หัวข้อไปอยู่ด้านบน */
+.form-control label{
+    display: block;
+    margin-bottom: 5px
+}
+
+/* แต่งส่วนที่ผู้ใช้กรอก */
+.form-control input {
+    display: block;
+    border: 2px solid lightgray;
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-control input:focus{
+    outline: none;
+}
+
+.form button {
+    background: orange;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        width: 80%;
+    }    
+}
+@media  screen and (max-width: 375px) {
+    .container{
+        width: 95%;
+    }
+}
 
 
