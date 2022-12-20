@@ -10,14 +10,30 @@ const FormComponent = () => {
 
 
     /* สร้าง State สำหรับ  Error Message*/
-    const [errorUserName , setErrorUserName] = useState('Username should be at least 8 characters.');
-    const [errorEmail,setErrorEmail] = useState('Invalid email format');
+    const [errorUserName , setErrorUserName] = useState('');
+    const [errorEmail,setErrorEmail] = useState('');
     const [errorPassword,setErrorPassword] = useState('Password must be at least 8 characters.');
     const [errorConfirmPassword,setErrorConfirmPassword] = useState('Password does not match');
+
+
+    /* function validateform */
+    const validateForm = (e) => {
+        e.preventDefault()
+        if(userName.length > 8){
+            setErrorUserName('');
+        }else{
+            setErrorUserName('Username should be at least 8 characters.');
+        }
+        if(email.includes("@")){
+            setErrorEmail('');
+        }else{
+            setErrorEmail('Invalid email format');
+        }
+    }
     return(       
         <div className="container">
-            {/* สร้างฟอรม์ */}
-            <form className="form">        
+            {/* function สำหรับตรวจสอบ state */}
+            <form className="form" onSubmit={validateForm}>        
             {/* Content ภายในฟอรม์ */}        
                 <h1>Registration Form</h1>
                 <div className="form-control">
