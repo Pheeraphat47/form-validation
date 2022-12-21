@@ -1,7 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
 
 const FormComponent = () => {
+
     const [userName, setUserName] = useState("");
     const [email, SetEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -53,6 +57,23 @@ const FormComponent = () => {
             setConfirmpasswordColor("red");
         }
     };
+
+    // สร้าง state 
+    const [type, setType] = useState('password'); // ค่าเริ่มต้นที่กรอกเป็นแบบ password
+    const [icon, setIcon] = useState(eyeOff); // ค่าเริ่มต้นของลูกตาเป็นแบบลูกตาปิด
+
+    // function สำหรับเช็คชนิดข้อมูลที่กรอกและแสดงสถานะลูกตา
+    const handleToggle = () => {
+        if (type === 'password') {
+            setIcon(eye);
+            setType('text');
+        }
+        else {
+            setIcon(eyeOff);
+            setType('password');
+        }
+    }
+
     return (
         <div className="container">
             {/* function สำหรับตรวจสอบ state */}
@@ -83,22 +104,26 @@ const FormComponent = () => {
                 <div className="form-control">
                     <label>Password</label>
                     <input
-                        type="password"
+                        type={type}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         style={{ borderColor: passwordColor }}
                     />
+                    {/* Icon ลูกตา */}
+                    <span className="eyeoff" onClick={handleToggle}><Icon icon={icon} size={20} /></span>
                     <small style={{ color: passwordColor }}>{errorPassword}</small>
                 </div>
                 <div className="form-control">
                     <label>Confirm Password</label>
                     <input
-                        type="password"
+                        type={type}
                         value={confirmpassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         style={{ borderColor: confirmpasswordColor }}
                     />
-                    <small style={{color:confirmpasswordColor}}>{errorConfirmPassword}</small>
+                    {/* Icon ลูกตา */}
+                    <span className="eyeoff" onClick={handleToggle}><Icon icon={icon} size={20} /></span>
+                    <small style={{ color: confirmpasswordColor }}>{errorConfirmPassword}</small>
                 </div>
                 <button type="submit">Register</button>
             </form>
